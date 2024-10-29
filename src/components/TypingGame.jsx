@@ -115,14 +115,11 @@ const TypingGame = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen bg-gray-100">
-      <h1
-        className="text-4xl font-bold   
- mb-6"
-      >
+    <div className="flex flex-col m-auto items-center justify-center w-full min-h-screen bg-gray-100 border-8 border-red-500">
+      <h1 className="text-4xl font-bold mb-6 text-red-700">
         Typing Speed Test
       </h1>
-      <div className="text-xl font-semibold text-gray-700 mb-4">{`Time Left: ${time}s`}</div>
+      <div className="text-xl font-semibold text-gray-500 mb-4">{`Time Left: ${time}s`}</div>
       <div className="flex flex-col items-center mt-4 w-full max-w-2xl">
         <p className="text-lg mb-4 text-gray-600">{renderTextWithColor()}</p>
         <textarea
@@ -171,7 +168,7 @@ const TypingGame = () => {
           </div>
         </div>
       )}
-      <div className="flex justify-around gap-4 mt-6 w-[50%]">
+      <div className="flex justify-around gap-4 mt-6 w-[50%] mb-5">
         <button
           onClick={isTestStarted ? handleFinish : handleStart}
           className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-200"
@@ -186,7 +183,6 @@ const TypingGame = () => {
         </button>
       </div>
       {/* Hidden audio element for error sound */}
-      console.log(errorSoundRef);
       <audio ref={errorSoundRef} src="./assets/error.mp3" preload="auto" />
     </div>
   );
