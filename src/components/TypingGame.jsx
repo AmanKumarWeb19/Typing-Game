@@ -123,7 +123,6 @@ const TypingGame = () => {
         Typing Speed Test
       </h1>
       <div className="text-xl font-semibold text-gray-700 mb-4">{`Time Left: ${time}s`}</div>
-
       <div className="flex flex-col items-center mt-4 w-full max-w-2xl">
         <p className="text-lg mb-4 text-gray-600">{renderTextWithColor()}</p>
         <textarea
@@ -135,7 +134,6 @@ const TypingGame = () => {
           ref={inputRef}
         />
       </div>
-
       {results && (
         <div className="bg-gray-100 p-4 rounded-lg shadow-md mt-10 w-[48%]">
           <h2 className="text-2xl font-bold text-center mb-4">Results</h2>
@@ -173,7 +171,6 @@ const TypingGame = () => {
           </div>
         </div>
       )}
-
       <div className="flex justify-around gap-4 mt-6 w-[50%]">
         <button
           onClick={isTestStarted ? handleFinish : handleStart}
@@ -188,8 +185,8 @@ const TypingGame = () => {
           Reset Test
         </button>
       </div>
-
       {/* Hidden audio element for error sound */}
+      console.log(errorSoundRef);
       <audio ref={errorSoundRef} src="./assets/error.mp3" preload="auto" />
     </div>
   );
