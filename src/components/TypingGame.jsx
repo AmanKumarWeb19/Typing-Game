@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../index.css";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 
 const TypingGame = () => {
   const [isTestStarted, setIsTestStarted] = useState(false);
@@ -115,7 +113,7 @@ const TypingGame = () => {
   };
 
   return (
-    <div className="flex flex-col m-auto items-center justify-center w-full min-h-screen bg-gray-100 border-8 border-red-500">
+    <div className="flex flex-col m-auto items-center justify-center w-full min-h-screen bg-gray-100 border-8 border-green-700 border-double">
       <h1 className="text-4xl font-bold mb-6 text-red-700">
         Typing Speed Test
       </h1>
