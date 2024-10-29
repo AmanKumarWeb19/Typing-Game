@@ -73,12 +73,21 @@ const TypingGame = () => {
     }
   }, [time, isTestStarted]);
 
+  const playErrorSound = () => {
+    if (errorSoundRef.current) {
+      errorSoundRef.current.play();
+    }
+  };
+
   const handleUserInput = (e) => {
     const value = e.target.value;
 
     // Play error sound if incorrect character
-    if (value[value.length - 1] !== text[value.length - 1]) {
-      errorSoundRef.current.play();
+    if (
+      value.length > 0 &&
+      value[value.length - 1] !== text[value.length - 1]
+    ) {
+      playErrorSound();
     }
 
     setUserInput(value);
@@ -181,7 +190,7 @@ const TypingGame = () => {
       </div>
 
       {/* Hidden audio element for error sound */}
-      <audio ref={errorSoundRef} src="path/to/error-sound.mp3" preload="auto" />
+      <audio ref={errorSoundRef} src="./assets/error.mp3" preload="auto" />
     </div>
   );
 };
